@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "email": "admin@qabank.com",
+    "nome": "Admin do Sistema",
+    "password": "admin123",
+    "password_incorreta": "admin12"
+    },
+  "novoCadastro": {
+    "email": "novo_usuario@qabank.com",
+    "nome": "Novo usuario",
+    "password": "123456",
+    "sexo": "Masculino"
+  }
+}
