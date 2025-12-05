@@ -13,6 +13,7 @@ describe('Realizar', () => {
     const valor = 500
     saquePage.preencherValor(valor)
     saquePage.clicarEmRealizarSaque()
+    saquePage.validarSaqueRealizadoComSucesso(valor)
     
 
    })
