@@ -32,3 +32,23 @@ Cypress.Commands.add('loginAdminViaStorage', () => {
     });
 });
 
+
+Cypress.Commands.add('sendUsuario', (usuario) => {
+    cy.window().then((win) => {
+        const users = JSON.parse(win.localStorage.getItem('bancoTesteUsers')) || {};
+        const balances = JSON.parse(win.localStorage.getItem('bancoTesteBalance')) || {};
+        users[usuario.email] = usuario;
+        balances[usuario.accountNumber] = usuario.balance;
+        win.localStorage.setItem('bancoTesteUsers', JSON.stringify(users));
+        win.localStorage.setItem('bancoTesteBalance', JSON.stringify(balances));
+    });
+});
+
+Cypress.Commands.add('loginViaStorage', (usuario) => {
+    cy.window().then((win) => {
+        win.localStorage.setItem('authToken', `token_${usuario.email}`);
+        win.localStorage.setItem('authUserAccountNumber', usuario.accountNumber);
+    });
+});
+
+

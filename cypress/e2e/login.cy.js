@@ -12,7 +12,7 @@ describe('Login', () => {
     cy.get('@users').then((response) => 
     {
       //ACT    
-      loginPage.realizarLogin(response.admin.email, response.admin.password)
+      loginPage.realizarLogin(response.admin.email, Cypress.env("adminPassword"))
     
       //ASSERT
       loginPage.validarNomeDoUsuario(response.admin.nome)

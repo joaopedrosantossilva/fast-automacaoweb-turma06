@@ -4,6 +4,14 @@ class PainelPage{
         return cy.get("[data-cy='nav-saque']")
     }
 
+    get transferenciaOption() {
+        return cy.get('[data-cy="nav-transferencia"]')
+    }
+
+    clicarEmTransferencia(){
+        this.transferenciaOption.click()
+    }
+
     acessarSaque(){
         this.saqueOption.click()
     }
